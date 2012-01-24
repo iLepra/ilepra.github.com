@@ -2,13 +2,6 @@
 /* Begin: b-body */
 .b-body {
 	position: relative;
-	
-	background-image: url('//img.knyazev.me/system/_blocks/b-body/b-body.bg.png');
-	background-repeat: repeat;
-	background-position: 0 0;
-/*
-	background-attachment: fixed;
-*/
 }
 /* End: b-body */
 
