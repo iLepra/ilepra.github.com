@@ -1,1 +1,0 @@
-// $ID: main.js, Tue Jan 24 2012 13:30:37 GMT+0300 (MSK), Leonid 'n3o' Knyazev $

@@ -1,0 +1,14 @@
+/* $ID: i-metrika.css, Sun Oct 09 2011 20:34:22 GMT+0400 (MSD), Leonid 'n3o' Knyazev $ */
+/* Begin: i-metrika */
+.i-metrika {
+	width: 1px; height: 1px;
+	
+	position: absolute;
+	left: -999px; top: -999px;
+	
+	display: block;
+	line-height: 1;
+	
+	overflow: hidden;
+}
+/* End: i-metrika */

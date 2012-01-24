@@ -1,0 +1,2 @@
+// $ID: i-common__check-is-frame.js, Fri Oct 07 2011 17:18:08 GMT+0400 (MSD), Leonid 'n3o' Knyazev $
+;try { if ((self.parent && !(self.parent === self)) && (self.parent.frames.length != 0)) self.parent.location = document.location; } catch(e) {};
