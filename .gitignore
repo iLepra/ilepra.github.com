@@ -1,1 +1,6 @@
-/.project
+*.*~
+*.bak
+*.old
+.DS_Store
+.project
+META-INF
