@@ -17,9 +17,7 @@ BEM.DOM.decl('i-metrika', {
 		'js' : function (mode, value) {
 			var _this     = this,
 				_counter  = _this.params.counter;
-                
-                console.log(_this.params);
-			
+
 				// изначально, новые счётчики запоминаются для отложенного создания (когда будет Ya.Metrika)
 				_counter && this.newCounter(_counter);
 
