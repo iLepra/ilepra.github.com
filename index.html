@@ -2,27 +2,60 @@
 <html id="nojs" lang="ru">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>iLeprosorium.ru</title>
+		<title>айЛепра.ру</title>
 		
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 		
-		<!-- styles -->
-		<link rel="stylesheet" href="static/main.m.css" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/main.css" />
 	</head>
 	
-	<body class="b-body i-bem" onclick="return { 'b-body' : {} };">
-		<!-- page -->
-		<div class="container">
-			<img src="static/blocks/b-lepra-logo/b-lepra-logo.png" width="166" height="47" border="0" />
-			<h1>iLeprosorium.ru</h1>
-			<h3>Скоро...</h3>
+	<body>
+		<!-- top bar -->
+		<div class="topbar" data-scrollspy="scrollspy">
+			<div class="topbar-inner">
+				<div class="container">
+					<a class="brand" href="#">айЛепра.ру</a>
+					<ul>
+						<li class="active"><a href="#home">Главная</a></li>
+						<li><a href="#download">Приложения</a></li>
+						<li><a href="#about">О проекте</a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
 		
-		<!-- scripts -->
-		<script src="static/main.m.js"></script>
 		
-		<!-- counters -->
-		<i class="i-metrika i-bem" onclick="return { 'i-metrika' : { counter : 12058225 } }" />
-		<noscript><img src="//mc.yandex.ru/watch/12058225" style="position:absolute; left:-9999px;" alt="" /></noscript>
+		<!-- footer -->
+		<footer class="footer">
+			<div class="container"></div>
+		</footer>
+		
+		<!-- scripts -->
+		<script src="js/jquery.m.js"></script>
+		<script src="js/bootstrap-modal.js"></script>
+		<script src="js/bootstrap-alerts.js"></script>
+		<script src="js/bootstrap-dropdown.js"></script>
+		<script src="js/bootstrap-scrollspy.js"></script>
+		<script src="js/bootstrap-buttons.js"></script>
+		<script src="js/bootstrap-tabs.js"></script>
+		<script src="js/bootstrap-twipsy.js"></script>
+		<script src="js/bootstrap-popover.js"></script>
+		<script src="js/main.js"></script>
+		
+		<!-- Yandex.Metrika counter -->
+		<div style="display: none;">
+			<script type="text/javascript">
+				(function(w, c) {
+					(w[c] = w[c] || []).push(function() {
+						try { w.yaCounter12058225 = new Ya.Metrika({id:12058225, enableAll: true}); }
+					catch(e) { }
+					});
+				})(window, "yandex_metrika_callbacks");
+			</script>
+		</div>
+		<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+		<noscript><div><img src="//mc.yandex.ru/watch/12058225" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
 	</body>
 </html>
