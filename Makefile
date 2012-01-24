@@ -1,6 +1,7 @@
+###########################################################################
 # Makefile for iLepra static files
 # @author: Leonid 'n3o' Knyazev (leonid@knyazev.me | n3o@desing.ru)
-
+###########################################################################
 
 # Root directory
 ROOT = .

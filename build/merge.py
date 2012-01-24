@@ -1,5 +1,8 @@
 #!/usr/bin/python
-
+###########################################################################
+# Builder for static files for iLepra Web Site
+# @author: Leonid 'n3o' Knyazev (leonid@knyazev.me | n3o@design.ru)
+###########################################################################
 import sys
 import os
 import re

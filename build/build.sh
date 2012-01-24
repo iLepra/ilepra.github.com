@@ -1,5 +1,8 @@
 #!/bin/sh
-
+###########################################################################
+# Builder for static files for iLepra Web Site
+# @author: Leonid 'n3o' Knyazev (leonid@knyazev.me | n3o@design.ru)
+###########################################################################
 builder="$0"
 source="$1"
 minify="$2"
