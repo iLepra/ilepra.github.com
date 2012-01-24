@@ -20,12 +20,16 @@ all: javascript styles complite
 # Building javascripts
 javascript:
 	@@echo "Building javascripts..."
+	@@rm ${ROOT}/${STATIC}/main.js
+	@@rm ${ROOT}/${STATIC}/main.m.js
 	@@$(BUILD) ${ROOT}/${STATIC}/_main.js -m
 
 
 # Building styles
 styles:
 	@@echo "Building styles..."
+	@@rm ${ROOT}/${STATIC}/main.css
+	@@rm ${ROOT}/${STATIC}/main.m.css
 	@@$(BUILD) ${ROOT}/${STATIC}/_main.css -m
 
 
