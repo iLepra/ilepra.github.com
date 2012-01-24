@@ -1,0 +1,10 @@
+/* $ID: main.css, Tue Jan 24 2012 18:37:21 GMT+0300 (MSK), Leonid 'n3o' Knyazev $ */
+.topbar .brand {
+	padding: 8px 20px 12px 55px !important;
+	
+	position: relative;
+	
+	background-image: url("i/lepro-logo.png");
+	background-position: 15px 0;
+	background-repeat: no-repeat;
+}
