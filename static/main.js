@@ -3837,6 +3837,8 @@ BEM.DOM.decl('i-metrika', {
 		'js' : function (mode, value) {
 			var _this     = this,
 				_counter  = _this.params.counter;
+                
+                console.log(_this.params);
 			
 				// изначально, новые счётчики запоминаются для отложенного создания (когда будет Ya.Metrika)
 				_counter && this.newCounter(_counter);
@@ -3886,7 +3888,7 @@ BEM.DOM.decl('i-metrika', {
 		return function () {
 			// как только случился callback (т.е. есть Ya.Metrika), новые счётчики делаются сразу
 			_this.newCounter = function (c) {
-				var counter = window['yaCounter' + c] = new Ya.Metrika({ id : c });
+				var counter = window['yaCounter' + c] = new Ya.Metrika({ id : c, enableAll: true });
 			};
 			
 			// делаем все отложенные счётчики
