@@ -336,7 +336,7 @@
 }
 
 .b-application__screenshot {
-	padding: 10px;
+	padding: 7px;
 	display: inline-block;
 }
 
@@ -463,6 +463,10 @@
 }
 
 /* iOS button styles */
+.b-button_type_ios a {
+	color: #FFFFFF;
+}
+
 .b-button_type_ios {
 	color: #FFFFFF;
 	
@@ -516,7 +520,7 @@
 
 .b-button_type_ios .b-button__wrapper {
 	padding: 10px 20px 10px 60px;
-	background: transparent url('../i/buttons/app-store.png') no-repeat 7px 4px ;
+	background: transparent url('../i/buttons/app-store.png') no-repeat 7px 1px ;
 }
 
 

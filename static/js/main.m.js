@@ -50,25 +50,7 @@ $(function () {
 		}
 	});
 	
-	$('a[rel=ilepra_android]', $applications).fancybox({
-		'transitionIn'		: 'none',
-		'transitionOut'		: 'none',
-		'titlePosition' 	: 'over',
-		'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
-			return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
-		}
-	});
-	
-	$('a[rel=lepradroid_android]', $applications).fancybox({
-		'transitionIn'		: 'none',
-		'transitionOut'		: 'none',
-		'titlePosition' 	: 'over',
-		'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
-			return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
-		}
-	});
-	
-	$('a[rel=ilepra_bpb]', $applications).fancybox({
+	$('a[rel=ilepra_android], a[rel=lepradroid_android], a[rel=ilepra_bpb], a[rel=leprowatch_ios]', $applications).fancybox({
 		'transitionIn'		: 'none',
 		'transitionOut'		: 'none',
 		'titlePosition' 	: 'over',
