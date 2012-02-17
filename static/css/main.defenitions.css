@@ -1,0 +1,285 @@
+/* $ID: main.defenitions.css, Thu Feb 16 2012 20:07:11 GMT+0300 (MSK), Leonid 'n3o' Knyazev $ */
+html {
+	min-height: 100%;
+}
+
+body {
+	background-color: #ffffff;
+	margin: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	line-height: 18px;
+	color: #404040;
+	height: 100%;
+}
+
+
+a {
+	color: #0069D6;
+}
+
+a:hover {
+	color: #FF0000;
+}
+
+h1, h2, h3, h4 {
+	margin: 1.75em 0 0.5em 0;
+	font-family: Georgia, Times, serif;
+	font-weight: normal;
+}
+
+h1 {
+	font-size: 2em;
+	margin-bottom: 1em;
+}
+
+h2 {
+	font-size: 1.7em;
+}
+
+h3 {
+	font-size: 1.4em;
+}
+
+h4 {
+	font-size: 1.1em;
+}
+
+h2:first-child,
+h3:first-child,
+h4:first-child {
+	margin-top: 0;
+}
+
+h1+h2, h1+h3, h1+h4,
+h2+h3, h2+h4, h3+h4 {
+	margin-top: 0;
+}
+
+img {
+	border-width: 0;
+}
+
+ul, ol {
+	margin: 0 0 1.2em 1.7em;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	margin: 0.5em 0 0.5em 1.5em;
+}
+
+ul>li:before {
+	content: '\2014\a0';
+	float: left;
+	margin-left: -1.25em;
+}
+
+ol>li {
+	list-style: decimal;
+}
+
+ol li ul,
+ul li ol,
+ol li ol,
+ul li ul {
+	margin: 0 0 1.2em 0;
+}
+
+table {
+	position: relative;
+	margin-bottom: 1.2em;
+	empty-cells: show;
+}
+
+table th,
+table td {
+	padding: 0.5em 1.2em 0.5em 0.3em;
+	empty-cells: show;
+}
+
+table th {
+	border-bottom: 1px solid #dddddd;
+	font-weight: bold;
+}
+
+form {
+	margin-bottom: 1.2em;
+}
+
+input, select, button, textarea {
+	font-size: 1em;
+	font-family: Arial, sans-serif;
+}
+
+input[type=text],
+input[type=password] {
+	padding: 3px;
+	background: transparent;
+}
+
+p {
+	margin-bottom: 1.2em;
+	line-height: 140%;
+}
+
+dl {
+	margin-bottom: 1.2em;
+	line-height: 140%;
+}
+
+dt {
+	margin-bottom: 0.3em;
+}
+
+dd {
+	margin-bottom: 1.2em;
+}
+
+blockquote {
+	margin-bottom: 1.2em;
+	line-height: 140%;
+	margin-left: 3em;
+}
+
+address {
+	margin-bottom: 1.2em;
+	line-height: 140%;
+	font-style: normal;
+}
+
+
+/* Custom button decoration */
+button,
+button:after,
+button:before,
+button:focus,
+button:hover,
+button:active,
+input[type=submit],
+input[type=submit]:after,
+input[type=submit]:before,
+input:focus[type=submit],
+input:hover[type=submit],
+input:active[type=submit] {
+	outline: none !important;
+}
+
+button,
+input[type=submit] {
+	padding: 6px 10px;
+	
+	font-family: Georgia, Times, serif;
+	outline: none;
+	
+	color: #555555;
+	
+	border-width: 1px;
+	border-color: #CCCCCC #CCCCCC #AAAAAA;
+	border-style: solid;
+	
+	text-shadow: 0 0 0 transparent, 0 1px 0 #FFFFFF;
+	
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	-opera-border-radius: 4px;
+	-moz-border-radius: 4px;
+	
+	box-shadow: 0 0 1px #FFFFFF inset;
+	-moz-box-shadow: 0 0 1px #FFFFFF inset;
+	-webkit-box-shadow: 0 0 1px #FFFFFF inset;
+	-opera-box-shadow: 0 0 1px #FFFFFF inset;
+	-khtml-box-shadow: 0 0 1px #FFFFFF inset;
+	
+	background: #F3F3F3;
+	background-image: -moz-linear-gradient(top, #FFFFFF, #E0E0E0);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #E0E0E0));
+	background-image: -o-linear-gradient(top, #FFFFFF, #E0E0E0);
+	background-image: linear-gradient(top, #FFFFFF, #E0E0E0);
+	*filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#FFFFFF', EndColorStr = '#E0E0E0');
+	
+	-moz-transition: all 0.218s;
+	-ms-transition: all 0.218s;
+	-o-transtion: all 0.218s;
+	-webkit-transition: all 0.218s;
+	transition: all 0.218s;
+}
+
+button:focus,
+button:hover,
+input:focus[type=submit],
+input:hover[type=submit] {
+	cursor: pointer;
+	
+	border-color: #999999;
+	
+	box-shadow: 0 1px 2px rgba(0,0,0,0.25),inset 0 0 3px #fff;
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.25),inset 0 0 3px #fff;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25),inset 0 0 3px #fff;
+	-opera-box-shadow: 0 1px 2px rgba(0,0,0,0.25),inset 0 0 3px #fff;
+	-khtml-box-shadow: 0 1px 2px rgba(0,0,0,0.25),inset 0 0 3px #fff;
+	
+	background: #F3F3F3;
+	background-image: -moz-linear-gradient(top, #FFFFFF, #E0E0E0);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #E0E0E0));
+	background-image: -o-linear-gradient(top, #FFFFFF, #E0E0E0);
+	background-image: linear-gradient(top, #FFFFFF, #E0E0E0);
+	*filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#FFFFFF', EndColorStr = '#E0E0E0');
+}
+
+button:active,
+input:active[type=submit] {
+	border-color: #999999 #CCCCCC #AAAAAA;
+	
+	box-shadow: inset 0 1px 2px #aaa;
+	-moz-box-shadow: inset 0 1px 2px #aaa;
+	-webkit-box-shadow: inset 0 1px 2px #aaa;
+	-opera-box-shadow: inset 0 1px 2px #aaa;
+	-khtml-box-shadow: inset 0 1px 2px #aaa;
+}
+
+button[disabled],
+input[type=submit][disabled] {
+	padding: 6px 10px;
+	
+	font-family: Georgia, Times, serif;
+	outline: none;
+	
+	color: #999999;
+	
+	border-width: 1px;
+	border-color: #CCCCCC;
+	border-style: solid;
+	
+	text-shadow: 0 0 0 transparent, 0 1px 0 #FFFFFF;
+	
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	-opera-border-radius: 4px;
+	-moz-border-radius: 4px;
+	
+	box-shadow: 0 0 1px #FFFFFF inset;
+	-moz-box-shadow: 0 0 1px #FFFFFF inset;
+	-webkit-box-shadow: 0 0 1px #FFFFFF inset;
+	-opera-box-shadow: 0 0 1px #FFFFFF inset;
+	-khtml-box-shadow: 0 0 1px #FFFFFF inset;
+	
+	background: #F3F3F3;
+	background-image: -moz-linear-gradient(top, #FFFFFF, #E0E0E0);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #E0E0E0));
+	background-image: -o-linear-gradient(top, #FFFFFF, #E0E0E0);
+	background-image: linear-gradient(top, #FFFFFF, #E0E0E0);
+	*filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#FFFFFF', EndColorStr = '#E0E0E0');
+	
+	-moz-transition: all 0.218s;
+	-ms-transition: all 0.218s;
+	-o-transtion: all 0.218s;
+	-webkit-transition: all 0.218s;
+	transition: all 0.218s;
+}
