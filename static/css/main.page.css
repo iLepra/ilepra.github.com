@@ -377,13 +377,16 @@
 
 /* begin: b-app-hostory */
 .b-app-history {
-	margin: 0; padding: 10px;
+	margin: 0; padding: 10px 10px 0 10px;
 	position: relative;
 }
 
 .b-app-history .item {
-	margin: 0; padding: 0;
+	margin: 0 0 5px 0; 
+	padding: 0 0 5px 0;
 	position: relative;
+	border-bottom: 1px dotted #CCCCCC;
+	line-height: 1.4;
 }
 
 .b-app-history .item .date {
@@ -396,14 +399,23 @@
 .b-app-history .item ul,
 .b-app-history .item ol li,
 .b-app-history .item ul li {
-	margin: 0; padding: 0;
+	margin: 0;
+	padding: 0;
 	position: relative;
+	list-style: none;
+	text-indent: 0;
 }
 
-.b-app-history .item .title,
-.b-app-history .item .change {
+.b-app-history .item ol li,
+.b-app-history .item ul li {
+	margin: 0 0 2px 4px;
+	padding: 0 0 2px 0;
+}
+
+.b-app-history .item .title {
 	margin: 0; padding: 0;
 	position: relative;
+	font-style: italic;
 }
 /* end: b-app-hostory */
 
