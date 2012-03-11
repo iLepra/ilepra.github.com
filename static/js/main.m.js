@@ -61,8 +61,7 @@ $(function () {
 	
 	$('a.qr-code').fancybox();
 	
-	var sHistoryBasePath = '/assets/history',
-		$history_links   = $('.app-history', $applications),
+	var $history_links   = $('.app-history', $applications),
 		oAppHistory      = {};
 	
 	$history_links.bind('click', function () {
@@ -81,11 +80,8 @@ $(function () {
 
 //			sData += '<div class="b-app-hostory">';
 			
-			$.getScript(sHistoryBasePath + '/' + sPlatform + '/' + sName + '.js', function (data, textStatus, jqxhr) {
-				console.log(data); //data returned
-				console.log(textStatus); //success
-				console.log(jqxhr.status); //200
-				console.log('Load was performed.');
+			$.getJSON('/assets/history/' + sPlatform + '/' + sName + '.js', function (data) {
+				console.log(data);
 			});
 			
 //			sData += '</div>';
