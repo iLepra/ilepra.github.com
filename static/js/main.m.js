@@ -85,7 +85,7 @@ $(function () {
 						sData += '<div class="item">';
 						
 						sData += '<p class="date">' + item.date + '</p>';
-						sDate += item.changes;
+						sData += item.changes;
 						
 						sData += '</div>';
 					});
@@ -97,6 +97,8 @@ $(function () {
 			});
 			
 			sData += '</div>';
+			
+			console.log(sData);
 			
 			oAppHistory[sPlatform][sName] = sData;
 		};
