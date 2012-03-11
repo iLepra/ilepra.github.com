@@ -69,7 +69,7 @@ $(function () {
 			$app            = $this.parents('.b-application'),
 			sData           = '',
 			bInited         = $this.attr('data-inited') || false,
-			sAppHistroyPath = sHistoryBasePath + '/' + $app.attr('data-platform') + '/' + $app.attr('data-name') + '.json';
+			sAppHistroyPath = sHistoryBasePath + '/' + $app.attr('data-platform') + '/' + $app.attr('data-name') + '.json?1';
 		
 		sData += '<div class="b-app-hostory">';
 		
@@ -79,10 +79,13 @@ $(function () {
 			$.getJSON(sAppHistroyPath, function (data) {
 				if (data) {
 					$.each(data, function (key, value) {
-						console.log(key + ' : ' + value);
+						sData += '<div class="item">';
+						
+						sData += '<p class="date">' + key + '</p>';
+						sData += value;
+						
+						sData += '</div>';
 					});
-					
-					sData += '<p>История изменения скоро появится.</p>';
 				} else {
 					sData += '<p>История изменения скоро появится.</p>';
 				}
