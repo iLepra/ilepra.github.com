@@ -82,7 +82,12 @@ $(function () {
 			$.getJSON('/assets/history/' + sPlatform + '/' + sName + '.js', function (data) {
 				if (data && data.history) {
 					$.each(data.history, function (i, item) {
-						console.log(item);
+						sData += '<div class="item">';
+						
+						sData += '<p class="date">' + item.date + '</p>';
+						sDate += item.changes;
+						
+						sData += '</div>';
 					});
 					
 					sData += '<p>Скоро будет.</p>'
@@ -96,16 +101,16 @@ $(function () {
 			oAppHistory[sPlatform][sName] = sData;
 		};
 
-//		$.fancybox(oAppHistory[sPlatform][sName], {
-//			'autoScale' : false,
-//			'autoDimensions': false,
-//			'transitionIn' : 'none',
-//			'transitionOut': 'none',
-//			'scrolling' : 'no',
-//			'titleShow' : false,
-//			'width'     : 350,
-//			'height'    : 'auto'
-//		});
+		$.fancybox(oAppHistory[sPlatform][sName], {
+			'autoScale' : false,
+			'autoDimensions': false,
+			'transitionIn' : 'none',
+			'transitionOut': 'none',
+			'scrolling' : 'no',
+			'titleShow' : false,
+			'width'     : 350,
+			'height'    : 'auto'
+		});
 
 		return false;
 	});
