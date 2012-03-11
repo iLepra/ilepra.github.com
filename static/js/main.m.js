@@ -98,8 +98,8 @@ $(function () {
 	function showHistory (sHistory) {
 		if (sHistory) {
 			$.fancybox(sHistory, {
-				'autoScale' : true,
-				'autoDimensions': true,
+				'autoScale' : false,
+				'autoDimensions': false,
 				'transitionIn' : 'none',
 				'transitionOut': 'none',
 				'scrolling' : 'auto',
