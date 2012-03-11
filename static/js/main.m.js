@@ -72,7 +72,7 @@ $(function () {
 			bInited         = $this.attr('data-inited') || false,
 			sPlatform       = $app.attr('data-platform'),
 			sName           = $app.attr('data-name'),
-			sAppHistroyPath = sHistoryBasePath + '/' + sPlatform + '/' + sName + '.json?jsoncallback=?';
+			sAppHistroyPath = sHistoryBasePath + '/' + sPlatform + '/' + sName + '.json';
 		
 		if ( !bInited ) {
 			$this.attr('data-inited', true);
@@ -80,14 +80,9 @@ $(function () {
 			oAppHistory[sPlatform] = oAppHistory[sPlatform] || {};
 
 			sData += '<div class="b-app-hostory">';
-			$.getJSON(sAppHistroyPath, function (data) {
-				$.each(data.history, function (i, item) {
-					sData += '<p>' + item.date + '</p>';
-					sData += item.changes;
-				});
-				
-				console.log(sData);
-			});
+			$.get(sAppHistroyPath, function (data) {
+				console.log(data);
+			}, 'json')
 			sData += '</div>';
 			
 			oAppHistory[sPlatform][sName] = sData;
