@@ -72,7 +72,7 @@ $(function () {
 			bInited         = $this.attr('data-inited') || false,
 			sPlatform       = $app.attr('data-platform'),
 			sName           = $app.attr('data-name'),
-			sAppHistroyPath = sHistoryBasePath + '/' + sPlatform + '/' + sName + '.json?1';
+			sAppHistroyPath = sHistoryBasePath + '/' + sPlatform + '/' + sName + '.json';
 		
 		if ( !bInited ) {
 			$this.attr('data-inited', true);
