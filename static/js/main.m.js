@@ -77,11 +77,14 @@ $(function () {
 			$.getJSON('/assets/history/' + sPlatform + '/' + sName + '.js', function (data) {
 				sData += '<div class="b-app-hostory">';
 				
+				console.log('<div class="b-app-hostory">');
 				$.each(data.history, function (i, item) {
 					sData += '<div class="item"><p class="date">' + item.date + '</p>' + item.changes + '</div>';
+					console.log('<div class="item"><p class="date">' + item.date + '</p>' + item.changes + '</div>');
 				});
 				
 				sData += '</div>';
+				console.log('</div>');
 			});
 		};
 		
