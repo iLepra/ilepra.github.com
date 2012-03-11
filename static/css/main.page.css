@@ -366,7 +366,21 @@
 .b-application__buttons .qr-code {
 	margin: 0 25px 0 0;
 }
+
+.b-application__buttons .app-history {
+	margin: 0; padding: 0;
+	position: absolute;
+	top: 30px; left: 10px;
+}
 /* end: b-application */
+
+
+/* begin: b-app-hostory */
+.b-app-hostory {
+	margin: 0; padding: 10px;
+	position: relative;
+}
+/* end: b-app-hostory */
 
 
 

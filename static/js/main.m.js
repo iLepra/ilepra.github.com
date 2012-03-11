@@ -60,4 +60,50 @@ $(function () {
 	});
 	
 	$('a.qr-code').fancybox();
+	
+	var sHistoryBasePath = '/assets/history',
+		$history_links   = $('.app-history', $applications),
+		$history_elem    = $('#app-history'),
+		oHistoryData     = {};
+	
+	$history_links.bind('click', function () {
+		var $this           = $(this),
+			$app            = $this.parents('.b-application'),
+			$data           = $('<div></div>').addClass('b-app-history'),
+			bInited         = $this.attr('data-inited') || false,
+			sPlatform       = $app.attr('data-platform'),
+			sAppName        = $app.attr('data-name'),
+			sAppHistroyPath = sHistoryBasePath + '/' + sPlatform + '/' + sAppName + '.json';
+		
+		if ( !bInited ) {
+			$this.attr('data-inited', true);
+
+			oHistoryData[sPlatform] = oHistoryData[sPlatform] || {};
+			oHistoryData[sPlatform][sAppName] = {};
+			
+			$.getJSON(sAppHistroyPath, function (data) {
+				console.log(data);
+			});
+		};
+		
+		var sData = '';
+			sData += '<div class="b-app-hostory">';
+			
+			sData += '<p>История изменения скоро появится.</p>';
+			
+			sData += '</div>';
+
+		$.fancybox(sData, {
+			'autoScale' : false,
+			'autoDimensions': false,
+			'transitionIn' : 'none',
+			'transitionOut': 'none',
+			'scrolling' : 'no',
+			'titleShow' : false,
+			'width'     : 350,
+			'height'    : 'auto'
+		});
+
+		return false;
+	});
 });
