@@ -76,32 +76,37 @@ $(function () {
 			$this.attr('data-inited', true);
 			
 			oAppHistory[sPlatform] = oAppHistory[sPlatform] || {};
-
+			oAppHistory[sPlatform][sName] = '';
+			
+			
 			sData += '<div class="b-app-hostory">';
 			
 			$.getJSON('/assets/history/' + sPlatform + '/' + sName + '.js', function (data) {
+				oAppHistory[sPlatform][sName] += '<div class="b-app-hostory">';
+				
 				if (data && data.history) {
 					$.each(data.history, function (i, item) {
-						sData += '<div class="item">';
+						console.log(item.date);
+						console.log(item.changes);
 						
-						sData += '<p class="date">' + item.date + '</p>';
-						sData += item.changes;
+						oAppHistory[sPlatform][sName] += '<div class="item">';
 						
-						sData += '</div>';
+						oAppHistory[sPlatform][sName] += '<p class="date">' + item.date + '</p>';
+						oAppHistory[sPlatform][sName] += item.changes;
+						
+						oAppHistory[sPlatform][sName] += '</div>';
 					});
 					
-					sData += '<p>Скоро будет.</p>'
+					oAppHistory[sPlatform][sName] += '<p>Скоро будет.</p>'
 				} else {
-					sData += '<p>История изменений для этого приложения пока не доступна.</p>';
+					oAppHistory[sPlatform][sName] += '<p>История изменений для этого приложения пока не доступна.</p>';
 				}
+				
+				oAppHistory[sPlatform][sName] += '</div>';
 			});
-			
-			sData += '</div>';
-			
-			console.log(sData);
-			
-			oAppHistory[sPlatform][sName] = sData;
 		};
+		
+		console.log(oAppHistory);
 
 		$.fancybox(oAppHistory[sPlatform][sName], {
 			'autoScale' : false,
