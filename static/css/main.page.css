@@ -376,8 +376,33 @@
 
 
 /* begin: b-app-hostory */
-.b-app-hostory {
+.b-app-history {
 	margin: 0; padding: 10px;
+	position: relative;
+}
+
+.b-app-history .item {
+	margin: 0; padding: 0;
+	position: relative;
+}
+
+.b-app-history .item .date {
+	margin: 0; padding: 0;
+	position: relative;
+	font-weight: bold;
+}
+
+.b-app-history .item ol,
+.b-app-history .item ul,
+.b-app-history .item ol li,
+.b-app-history .item ul li {
+	margin: 0; padding: 0;
+	position: relative;
+}
+
+.b-app-history .item .title,
+.b-app-history .item .change {
+	margin: 0; padding: 0;
 	position: relative;
 }
 /* end: b-app-hostory */
