@@ -77,7 +77,7 @@ $(function () {
 			oHistoryData[sPlatform] = oHistoryData[sPlatform] || {};
 			oHistoryData[sPlatform][sName] = oHistoryData[sPlatform][sName] || '';
 			
-			$.getJSON('/assets/history/' + sPlatform + '/' + sName + '.js', function (data) {
+			$.getJSON('/assets/history/' + sPlatform + '/' + sName + '.js?' + Math.round(new Date().getTime()), function (data) {
 				oHistoryData[sPlatform][sName] += '<div class="b-app-history">';
 
 				$.each(data.history, function (i, item) {
