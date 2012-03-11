@@ -71,22 +71,24 @@ $(function () {
 			sData           = '',
 			bInited         = $this.attr('data-inited') || false,
 			sPlatform       = $app.attr('data-platform'),
-			sName           = $app.attr('data-name'),
-			sAppHistroyPath = sHistoryBasePath + '/' + sPlatform + '/' + sName + '.json';
+			sName           = $app.attr('data-name');
 		
 		if ( !bInited ) {
 			$this.attr('data-inited', true);
 			
 			oAppHistory[sPlatform] = oAppHistory[sPlatform] || {};
+			oAppHistory[sPlatform][sName] = '';
 
 			sData += '<div class="b-app-hostory">';
-			$.get(sAppHistroyPath, function (data) {
+			
+			$.get(sHistoryBasePath + '/' + sPlatform + '/' + sName + '.js', function (data) {
 				alert('aaaaaaaaaaaaaaaaaaaa');
 				alert(data);
 			});
+			
 			sData += '</div>';
 			
-			oAppHistory[sPlatform][sName] = sData;
+			//oAppHistory[sPlatform][sName] = sData;
 		};
 
 		$.fancybox(oAppHistory[sPlatform][sName], {
