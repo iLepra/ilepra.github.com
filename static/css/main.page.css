@@ -382,20 +382,21 @@
 }
 
 .b-app-history .item {
-	margin: 0 0 5px 0; 
-	padding: 0 0 5px 0;
+	margin: 0 0 25px 0; 
+	padding: 0 0 15px 0;
 	position: relative;
 	border-bottom: 1px dotted #CCCCCC;
 	line-height: 1.4;
 }
 
 .b-app-history .item:last-child {
-	padding: 0 0 6px 0;
+	padding: 0 0 16px 0;
 	border-bottom: 0px !important;
 }
 
 .b-app-history .item .date {
-	margin: 0; padding: 0;
+	margin: 0 0 5px 0;
+	padding: 0;
 	position: relative;
 	font-weight: bold;
 }
@@ -414,12 +415,12 @@
 
 .b-app-history .item ol li,
 .b-app-history .item ul li {
-	margin: 0 0 4px 4px;
+	margin: 0 0 5px 0px;
 	padding: 0;
 }
 
 .b-app-history .item .title {
-	margin: 4px 0 2px;
+	margin: 5px 0 3px;
 	padding: 0;
 	position: relative;
 	font-style: italic;
