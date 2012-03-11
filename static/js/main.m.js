@@ -83,13 +83,13 @@ $(function () {
 			
 			$.getJSON(sAppHistroyPath, function (data) {
 				if (data) {
-					 $.extend(oHistoryData[sPlatform][sAppName], data, {});
+					oHistoryData[sPlatform][sAppName]['name'] = data.name;
+					oHistoryData[sPlatform][sAppName]['history'] = data.history;
 				} else {
-					$.extend(oHistoryData[sPlatform][sAppName], {
-						'history' : {
-							'error' : '<p>Ошибка при загрузке истории изменений.</p>'
-						}
-					}, {});
+					oHistoryData[sPlatform][sAppName]['name'] = sAppName;
+					oHistoryData[sPlatform][sAppName]['history'] = {
+						'error' : '<p>Ошибка загрузки истории изменений.</p>'
+					};
 				}
 			});
 		};
