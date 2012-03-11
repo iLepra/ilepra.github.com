@@ -61,12 +61,12 @@ $(function () {
 	
 	$('a.qr-code').fancybox();
 	
-	var $history_links   = $('.app-history', $applications);
+	var $history_links   = $('.app-history', $applications),
+		oHistoryData     = {};
 	
 	$history_links.bind('click', function () {
 		var $this           = $(this),
 			$app            = $this.parents('.b-application'),
-			sData           = '',
 			bInited         = $this.attr('data-inited') || false,
 			sPlatform       = $app.attr('data-platform'),
 			sName           = $app.attr('data-name');
@@ -74,21 +74,25 @@ $(function () {
 		if ( !bInited ) {
 			$this.attr('data-inited', true);
 			
+			oHistoryData[sPlatform] = oHistoryData[sPlatform] || {};
+			oHistoryData[sPlatform][sName] = oHistoryData[sPlatform][sName] || '';
+			
 			$.getJSON('/assets/history/' + sPlatform + '/' + sName + '.js', function (data) {
-				sData += '<div class="b-app-hostory">';
-				
-				console.log('<div class="b-app-hostory">');
+				oHistoryData[sPlatform][sName] += '<div class="b-app-hostory">';
+
 				$.each(data.history, function (i, item) {
-					sData += '<div class="item"><p class="date">' + item.date + '</p>' + item.changes + '</div>';
-					console.log('<div class="item"><p class="date">' + item.date + '</p>' + item.changes + '</div>');
+					oHistoryData[sPlatform][sName] += '<div class="item"><p class="date">' + item.date + '</p>' + item.changes + '</div>';
 				});
 				
-				sData += '</div>';
-				console.log('</div>');
+				oHistoryData[sPlatform][sName] += '</div>';
+				
+				console.log('First!');
+				console.log(oHistoryData[sPlatform][sName]);
 			});
+		} else {
+			console.log('Second!');
+			console.log(oHistoryData[sPlatform][sName]);
 		};
-		
-		console.log(sData);
 
 //		$.fancybox(oAppHistory[sPlatform][sName], {
 //			'autoScale' : false,
