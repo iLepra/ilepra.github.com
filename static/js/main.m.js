@@ -80,7 +80,7 @@ $(function () {
 			oAppHistory[sPlatform] = oAppHistory[sPlatform] || {};
 
 			sData += '<div class="b-app-hostory">';
-			$.getJSON(sAppHistoryPath, function (resp) {
+			$.getJSON(sAppHistroyPath, function (resp) {
 				$.each(resp.history, function (i, item) {
 					console.log(i + '. Date: ' + item.date + '   Info: ' + item.changes);
 				});
