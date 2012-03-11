@@ -104,7 +104,7 @@ $(function () {
 				'transitionOut': 'none',
 				'scrolling' : 'no',
 				'titleShow' : false,
-				'width'     : 350,
+				'width'     : 560,
 				'height'    : 'auto'
 			});
 		}
