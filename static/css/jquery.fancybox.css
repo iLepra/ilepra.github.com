@@ -134,7 +134,7 @@
 	position: absolute;
 	bottom: 0px;
 	height: 100%;
-	width: 35%;
+	width: 20%;
 	cursor: pointer;
 	outline: none;
 	background: transparent url('../i/fancybox/blank.gif');
@@ -143,11 +143,11 @@
 }
 
 #fancybox-left {
-	left: 0px;
+	left: -20%;
 }
 
 #fancybox-right {
-	right: 0px;
+	right: -20%;
 }
 
 #fancybox-left-ico, #fancybox-right-ico {
