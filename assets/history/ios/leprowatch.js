@@ -1,8 +1,6 @@
-{
-	"history"  : [
-		{
-			"date"    : "",
-			"changes" : ""
-		}
-	]
-}
+{"history"  : [
+	{
+		"date"    : "",
+		"changes" : ""
+	}
+]}
