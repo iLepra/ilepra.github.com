@@ -61,12 +61,12 @@ $(function () {
 	
 	$('a.qr-code').fancybox();
 	
-	var $history_links   = $('.app-history', $applications),
-		oAppHistory      = {};
+	var $history_links   = $('.app-history', $applications);
 	
 	$history_links.bind('click', function () {
 		var $this           = $(this),
 			$app            = $this.parents('.b-application'),
+			sData           = '',
 			bInited         = $this.attr('data-inited') || false,
 			sPlatform       = $app.attr('data-platform'),
 			sName           = $app.attr('data-name');
@@ -74,32 +74,29 @@ $(function () {
 		if ( !bInited ) {
 			$this.attr('data-inited', true);
 			
-			oAppHistory[sPlatform] = oAppHistory[sPlatform] || {};
-			oAppHistory[sPlatform][sName] = oAppHistory[sPlatform][sName] || '';
-			
 			$.getJSON('/assets/history/' + sPlatform + '/' + sName + '.js', function (data) {
-				oAppHistory[sPlatform][sName] += '<div class="b-app-hostory">';
+				sData += '<div class="b-app-hostory">';
 				
 				$.each(data.history, function (i, item) {
-					oAppHistory[sPlatform][sName] += '<div class="item"><p class="date">' + item.date + '</p>' + item.changes + '</div>';
+					sData += '<div class="item"><p class="date">' + item.date + '</p>' + item.changes + '</div>';
 				});
 				
-				oAppHistory[sPlatform][sName] += '</div>';
+				sData += '</div>';
 			});
 		};
 		
-		console.log(oAppHistory);
+		console.log(sData);
 
-		$.fancybox(oAppHistory[sPlatform][sName], {
-			'autoScale' : false,
-			'autoDimensions': false,
-			'transitionIn' : 'none',
-			'transitionOut': 'none',
-			'scrolling' : 'no',
-			'titleShow' : false,
-			'width'     : 350,
-			'height'    : 'auto'
-		});
+//		$.fancybox(oAppHistory[sPlatform][sName], {
+//			'autoScale' : false,
+//			'autoDimensions': false,
+//			'transitionIn' : 'none',
+//			'transitionOut': 'none',
+//			'scrolling' : 'no',
+//			'titleShow' : false,
+//			'width'     : 350,
+//			'height'    : 'auto'
+//		});
 
 		return false;
 	});
