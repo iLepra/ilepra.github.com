@@ -81,8 +81,11 @@ $(function () {
 
 //			sData += '<div class="b-app-hostory">';
 			
-			$.getJSON(sHistoryBasePath + '/' + sPlatform + '/' + sName + '.js', function (data) {
-				console.log(data);
+			$.getScript(sHistoryBasePath + '/' + sPlatform + '/' + sName + '.js', function (data, textStatus, jqxhr) {
+				console.log(data); //data returned
+				console.log(textStatus); //success
+				console.log(jqxhr.status); //200
+				console.log('Load was performed.');
 			});
 			
 //			sData += '</div>';
