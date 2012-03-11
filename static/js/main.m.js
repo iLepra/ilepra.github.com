@@ -99,13 +99,14 @@ $(function () {
 		if (sHistory) {
 			$.fancybox(sHistory, {
 				'autoScale' : true,
-				'autoDimensions': false,
+				'autoDimensions': true,
 				'transitionIn' : 'none',
 				'transitionOut': 'none',
 				'scrolling' : 'auto',
 				'titleShow' : false,
 				'width'     : 560,
-				'height'    : 'auto'
+				'height'    : 'auto',
+				'centerOnScroll' : true
 			});
 		}
 	};
