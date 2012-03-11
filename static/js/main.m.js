@@ -78,7 +78,7 @@ $(function () {
 			oHistoryData[sPlatform][sName] = oHistoryData[sPlatform][sName] || '';
 			
 			$.getJSON('/assets/history/' + sPlatform + '/' + sName + '.js', function (data) {
-				oHistoryData[sPlatform][sName] += '<div class="b-app-hostory">';
+				oHistoryData[sPlatform][sName] += '<div class="b-app-history">';
 
 				$.each(data.history, function (i, item) {
 					oHistoryData[sPlatform][sName] += '<div class="item"><p class="date">' + item.date + '</p>' + item.changes + '</div>';
@@ -86,25 +86,27 @@ $(function () {
 				
 				oHistoryData[sPlatform][sName] += '</div>';
 				
-				console.log('First!');
-				console.log(oHistoryData[sPlatform][sName]);
+				showHistory(oHistoryData[sPlatform][sName]);
 			});
 		} else {
-			console.log('Second!');
-			console.log(oHistoryData[sPlatform][sName]);
+			showHistory(oHistoryData[sPlatform][sName]);
 		};
-
-//		$.fancybox(oAppHistory[sPlatform][sName], {
-//			'autoScale' : false,
-//			'autoDimensions': false,
-//			'transitionIn' : 'none',
-//			'transitionOut': 'none',
-//			'scrolling' : 'no',
-//			'titleShow' : false,
-//			'width'     : 350,
-//			'height'    : 'auto'
-//		});
-
+		
 		return false;
 	});
+	
+	function showHistory (sHistory) {
+		if (sHistory) {
+			$.fancybox(sHistory, {
+				'autoScale' : false,
+				'autoDimensions': false,
+				'transitionIn' : 'none',
+				'transitionOut': 'none',
+				'scrolling' : 'no',
+				'titleShow' : false,
+				'width'     : 350,
+				'height'    : 'auto'
+			});
+		}
+	};
 });
