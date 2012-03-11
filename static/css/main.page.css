@@ -413,7 +413,8 @@
 }
 
 .b-app-history .item .title {
-	margin: 0; padding: 0;
+	margin: 2px 0 4px;
+	padding: 0;
 	position: relative;
 	font-style: italic;
 }
