@@ -80,16 +80,16 @@ $(function () {
 			oAppHistory[sPlatform] = oAppHistory[sPlatform] || {};
 
 			sData += '<div class="b-app-hostory">';
-			$.getJSON(sAppHistroyPath, function (resp) {
-				
-				console.log(resp);
-				
-				$.each(resp.history, function (i, item) {
-					console.log(i + '. Date: ' + item.date + '   Info: ' + item.changes);
+			$.getJSON(sAppHistroyPath, function (data) {
+				$.each(data.history, function (i, item) {
+					sData += '<p>' + item.date + '</p>';
+					sData += item.changes;
 				});
 				
+				console.log(sData);
 			});
 			sData += '</div>';
+			
 			oAppHistory[sPlatform][sName] = sData;
 		};
 
