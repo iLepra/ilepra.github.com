@@ -62,39 +62,48 @@ $(function () {
 	$('a.qr-code').fancybox();
 	
 	var sHistoryBasePath = '/assets/history',
-		$history_links   = $('.app-history', $applications);
+		$history_links   = $('.app-history', $applications),
+		oAppHistory      = {};
 	
 	$history_links.bind('click', function () {
 		var $this           = $(this),
 			$app            = $this.parents('.b-application'),
 			sData           = '',
 			bInited         = $this.attr('data-inited') || false,
-			sAppHistroyPath = sHistoryBasePath + '/' + $app.attr('data-platform') + '/' + $app.attr('data-name') + '.json?1';
-		
-		sData += '<div class="b-app-hostory">';
+			sPlatform       = $app.attr('data-platform'),
+			sName           = $app.attr('data-name'),
+			sAppHistroyPath = sHistoryBasePath + '/' + sPlatform + '/' + sName + '.json?1';
 		
 		if ( !bInited ) {
 			$this.attr('data-inited', true);
+			
+			oAppHistory[sPlatform] = oAppHistory[sPlatform] || {};
 
+			sData += '<div class="b-app-hostory">';
 			$.getJSON(sAppHistroyPath, function (data) {
 				if (data) {
 					$.each(data, function (key, value) {
-						sData += '<div class="item">';
-						
-						sData += '<p class="date">' + key + '</p>';
-						sData += value;
-						
-						sData += '</div>';
+						if ( key == 'error' ) {
+							sData += '<p class="error">Ошибка загрузки истории изменений.</p>';
+						} else {
+							sData += '<div class="item">';
+								sData += '<p class="date">' + key + '</p>';
+								sData += value;
+							sData += '</div>';
+						}
 					});
 				} else {
-					sData += '<p>История изменения скоро появится.</p>';
+					sData += '<p class="coming-soon">История изменения скоро появится.</p>';
 				}
 			});
+			sData += '</div>';
+			
+			console.log(sData);
+			
+			oAppHistory[sPlatform][sName] = sData;
 		};
-		
-		sData += '</div>';
 
-		$.fancybox(sData, {
+		$.fancybox(oAppHistory[sPlatform][sName], {
 			'autoScale' : false,
 			'autoDimensions': false,
 			'transitionIn' : 'none',
