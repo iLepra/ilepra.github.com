@@ -82,9 +82,19 @@ $(function () {
 			oHistoryData[sPlatform][sAppName] = {};
 			
 			$.getJSON(sAppHistroyPath, function (data) {
-				console.log(data);
+				if (data) {
+					 $.extend(oHistoryData[sPlatform][sAppName], data, {});
+				} else {
+					$.extend(oHistoryData[sPlatform][sAppName], {
+						'history' : {
+							'error' : '<p>Ошибка при загрузке истории изменений.</p>'
+						}
+					}, {});
+				}
 			});
 		};
+		
+		console.log(oHistoryData);
 		
 		var sData = '';
 			sData += '<div class="b-app-hostory">';
