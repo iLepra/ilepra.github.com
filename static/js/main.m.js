@@ -81,7 +81,7 @@ $(function () {
 //			sData += '<div class="b-app-hostory">';
 			
 			$.getJSON('/assets/history/' + sPlatform + '/' + sName + '.js', function (data) {
-				console.log(data);
+				console.log(data.history);
 			});
 			
 //			sData += '</div>';
