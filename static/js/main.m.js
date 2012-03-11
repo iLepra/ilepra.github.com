@@ -80,20 +80,12 @@ $(function () {
 			oAppHistory[sPlatform] = oAppHistory[sPlatform] || {};
 
 			sData += '<div class="b-app-hostory">';
-			$.getJSON(sAppHistroyPath, function (data) {
-				if (data) {
-					$.each(data, function (key, value) {
-						if ( key == 'error' ) {
-							sData += '<p class="error">Ошибка загрузки истории изменений.</p>';
-						} else {
-							sData += '<div class="item">';
-								sData += '<p class="date">' + key + '</p>';
-								sData += value;
-							sData += '</div>';
-						}
-					});
-				} else {
-					sData += '<p class="coming-soon">История изменения скоро появится.</p>';
+			
+			$.ajax({
+				url: sAppHistroyPath,
+				dataType: 'json',
+				success: function (data) {
+					console.log(data);
 				}
 			});
 			sData += '</div>';
