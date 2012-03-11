@@ -76,31 +76,30 @@ $(function () {
 		if ( !bInited ) {
 			$this.attr('data-inited', true);
 			
-			oAppHistory[sPlatform] = oAppHistory[sPlatform] || {};
-			oAppHistory[sPlatform][sName] = '';
+//			oAppHistory[sPlatform] = oAppHistory[sPlatform] || {};
+//			oAppHistory[sPlatform][sName] = '';
 
-			sData += '<div class="b-app-hostory">';
+//			sData += '<div class="b-app-hostory">';
 			
-			$.get(sHistoryBasePath + '/' + sPlatform + '/' + sName + '.js', function (data) {
-				alert('aaaaaaaaaaaaaaaaaaaa');
-				alert(data);
+			$.getJSON(sHistoryBasePath + '/' + sPlatform + '/' + sName + '.js', function (data) {
+				console.log(data);
 			});
 			
-			sData += '</div>';
+//			sData += '</div>';
 			
 			//oAppHistory[sPlatform][sName] = sData;
 		};
 
-		$.fancybox(oAppHistory[sPlatform][sName], {
-			'autoScale' : false,
-			'autoDimensions': false,
-			'transitionIn' : 'none',
-			'transitionOut': 'none',
-			'scrolling' : 'no',
-			'titleShow' : false,
-			'width'     : 350,
-			'height'    : 'auto'
-		});
+//		$.fancybox(oAppHistory[sPlatform][sName], {
+//			'autoScale' : false,
+//			'autoDimensions': false,
+//			'transitionIn' : 'none',
+//			'transitionOut': 'none',
+//			'scrolling' : 'no',
+//			'titleShow' : false,
+//			'width'     : 350,
+//			'height'    : 'auto'
+//		});
 
 		return false;
 	});
