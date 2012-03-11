@@ -105,7 +105,7 @@ $(function () {
 				'scrolling' : 'auto',
 				'titleShow' : false,
 				'width'     : 560,
-				'height'    : 'auto',
+				'height'    : 600,
 				'centerOnScroll' : true
 			});
 		}
