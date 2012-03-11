@@ -67,7 +67,6 @@ $(function () {
 	$history_links.bind('click', function () {
 		var $this           = $(this),
 			$app            = $this.parents('.b-application'),
-			sData           = '',
 			bInited         = $this.attr('data-inited') || false,
 			sPlatform       = $app.attr('data-platform'),
 			sName           = $app.attr('data-name');
@@ -76,31 +75,14 @@ $(function () {
 			$this.attr('data-inited', true);
 			
 			oAppHistory[sPlatform] = oAppHistory[sPlatform] || {};
-			oAppHistory[sPlatform][sName] = '';
-			
-			
-			sData += '<div class="b-app-hostory">';
+			oAppHistory[sPlatform][sName] = oAppHistory[sPlatform][sName] || '';
 			
 			$.getJSON('/assets/history/' + sPlatform + '/' + sName + '.js', function (data) {
 				oAppHistory[sPlatform][sName] += '<div class="b-app-hostory">';
 				
-				if (data && data.history) {
-					$.each(data.history, function (i, item) {
-						console.log(item.date);
-						console.log(item.changes);
-						
-						oAppHistory[sPlatform][sName] += '<div class="item">';
-						
-						oAppHistory[sPlatform][sName] += '<p class="date">' + item.date + '</p>';
-						oAppHistory[sPlatform][sName] += item.changes;
-						
-						oAppHistory[sPlatform][sName] += '</div>';
-					});
-					
-					oAppHistory[sPlatform][sName] += '<p>Скоро будет.</p>'
-				} else {
-					oAppHistory[sPlatform][sName] += '<p>История изменений для этого приложения пока не доступна.</p>';
-				}
+				$.each(data.history, function (i, item) {
+					oAppHistory[sPlatform][sName] += '<div class="item"><p class="date">' + item.date + '</p>' + item.changes + '</div>';
+				});
 				
 				oAppHistory[sPlatform][sName] += '</div>';
 			});
