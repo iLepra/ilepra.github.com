@@ -75,18 +75,25 @@ $(function () {
 		if ( !bInited ) {
 			$this.attr('data-inited', true);
 			
-//			oAppHistory[sPlatform] = oAppHistory[sPlatform] || {};
-//			oAppHistory[sPlatform][sName] = '';
+			oAppHistory[sPlatform] = oAppHistory[sPlatform] || {};
 
-//			sData += '<div class="b-app-hostory">';
+			sData += '<div class="b-app-hostory">';
 			
 			$.getJSON('/assets/history/' + sPlatform + '/' + sName + '.js', function (data) {
-				console.log(data.history);
+				if (data && data.history) {
+					$.each(data.history, function (i, item) {
+						console.log(item);
+					});
+					
+					sData += '<p>Скоро будет.</p>'
+				} else {
+					sData += '<p>История изменений для этого приложения пока не доступна.</p>';
+				}
 			});
 			
-//			sData += '</div>';
+			sData += '</div>';
 			
-			//oAppHistory[sPlatform][sName] = sData;
+			oAppHistory[sPlatform][sName] = sData;
 		};
 
 //		$.fancybox(oAppHistory[sPlatform][sName], {
