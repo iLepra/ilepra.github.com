@@ -409,6 +409,7 @@
 	position: relative;
 	list-style: none;
 	text-indent: 0;
+	line-height: 1.4;
 }
 
 .b-app-history .item ol li,

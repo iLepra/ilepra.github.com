@@ -102,7 +102,7 @@ $(function () {
 				'autoDimensions': false,
 				'transitionIn' : 'none',
 				'transitionOut': 'none',
-				'scrolling' : 'no',
+				'scrolling' : 'yes',
 				'titleShow' : false,
 				'width'     : 560,
 				'height'    : 'auto'
